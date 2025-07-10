@@ -1,0 +1,20 @@
+# --- Node modules ---
+frontend/node_modules/
+backend/node_modules/
+
+# === Environment files (if added later) ===
+env
+.env
+.env.*
+venv
+.venv
+.venv.*
+
+# === Editor-specific files ===
+.vscode/
+backend/status-cheetsheet.txt
+
+# === Frontend ===
+frontend/
+dummy-frontend/
+
