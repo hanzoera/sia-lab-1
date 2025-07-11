@@ -1,4 +1,6 @@
 export const validateRegistration = async (req, res, next) => {
+    console.log("[validateRegistration] start");
+
     // Destructure request body object into variables
     const { 
         username, 
@@ -10,7 +12,7 @@ export const validateRegistration = async (req, res, next) => {
     const usernameRegex = /^[a-zA-Z0-9_-]{4,}$/; // Only allows 4+ single-text, alphanumeric, underscores, and hyphen
     // const nameRegex = /^[A-Za-z .'-]+$/; // Allows alphabetic characters, spaces, apostrophe and hyphen
     const emailRegex = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/; // Follows the email formatting, and disallow special characters
-    // - passRegex format must be 6 characters long.
+    // - passRegex format must be 6+ characters long.
     
     if (!username || !email || !password) {
         return res.status(400).json({ msg : 'All input fields are required.' });
@@ -28,11 +30,14 @@ export const validateRegistration = async (req, res, next) => {
         return res.status(400).json({ msg : 'Password must be at least 6 characters long.' });
     }
     
-    console.log('from validateRegistration: Passed.');
+    console.log("[validateRegistration] passed all regex restriction validation.");
+    
     next();
 };
 
 export const validateLogin = async (req, res, next) => {
+    console.log("[validateLogin] start");
+
     // Destructure request body object into variables
     const {
         username,
@@ -43,6 +48,8 @@ export const validateLogin = async (req, res, next) => {
     if (!username || !password) {
         return res.status(400).json({ msg : 'Both username and password are required.' })
     }
+
+    console.log("[validateLogin] passed required field validation");
 
     next();
 };

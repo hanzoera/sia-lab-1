@@ -12,9 +12,8 @@ venv
 
 # === Editor-specific files ===
 .vscode/
-backend/status-cheetsheet.txt
+backend/status-cheatsheet.txt
 
 # === Frontend ===
 frontend/
 dummy-frontend/
-
